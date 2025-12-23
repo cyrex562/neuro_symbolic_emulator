@@ -1,0 +1,28 @@
+{
+  "units": [
+    { 
+      "name": "alu_bitwise", 
+      "type": "BITWISE", 
+      "description": "Standard Bitwise Operations (AND, OR, XOR)",
+      "conf": { "inputs": 19, "outputs": 8 } 
+    },
+    { 
+      "name": "alu_compare", 
+      "type": "CMP", 
+      "description": "Comparison Unit (GT, EQ, LT)",
+      "conf": { "inputs": 16, "outputs": 3 }
+    },
+    { 
+      "name": "alu_adder", 
+      "type": "ADDER", 
+      "description": "8-bit Adder",
+      "conf": { "inputs": 16, "outputs": 9 }
+    },
+    {
+       "name": "pc_unit",
+       "type": "PC",
+       "description": "Program Counter",
+       "conf": {}
+    }
+  ]
+}
