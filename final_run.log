@@ -1,0 +1,87 @@
+   Compiling neuro_symbolic_emulator v0.1.0 (/home/cyrex/Projects/neuro_symbolic_emulator)
+warning: method `perturb` is never used
+ --> src/fu.rs:8:8
+  |
+6 | pub trait NeuralFunctionalUnit {
+  |           -------------------- method in this trait
+7 |     fn forward(&self, input: &Array1<f32>) -> Array1<f32>;
+8 |     fn perturb(&mut self, amount: f32); // For noise injection verification
+  |        ^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `derivative` is never used
+  --> src/fu.rs:29:12
+   |
+19 | impl Activation {
+   | --------------- method in this implementation
+...
+29 |     pub fn derivative(&self, x: &Array1<f32>) -> Array1<f32> {
+   |            ^^^^^^^^^^
+
+warning: method `train_step` is never used
+  --> src/fu.rs:66:12
+   |
+57 | impl BaseFU {
+   | ----------- method in this implementation
+...
+66 |     pub fn train_step(&mut self, input: &Array1<f32>, target: &Array1<f32>, lr: f32) {
+   |            ^^^^^^^^^^
+
+warning: associated function `create_comparator` is never used
+   --> src/fu.rs:150:12
+    |
+126 | impl BaseFU {
+    | ----------- associated function in this implementation
+...
+150 |     pub fn create_comparator() -> Self {
+    |            ^^^^^^^^^^^^^^^^^
+
+warning: field `trigger_map` is never read
+  --> src/bus.rs:16:9
+   |
+12 | pub struct TransportBus {
+   |            ------------ field in this struct
+...
+16 |     pub trigger_map: HashMap<String, String>, 
+   |         ^^^^^^^^^^^
+
+warning: method `cleanup` is never used
+  --> src/register.rs:60:12
+   |
+ 9 | impl NeuralRegister {
+   | ------------------- method in this implementation
+...
+60 |     pub fn cleanup(&mut self) {
+   |            ^^^^^^^
+
+warning: struct `VoterBlock` is never constructed
+ --> src/voter.rs:7:12
+  |
+7 | pub struct VoterBlock;
+  |            ^^^^^^^^^^
+
+warning: associated function `vote` is never used
+  --> src/voter.rs:10:12
+   |
+ 9 | impl VoterBlock {
+   | --------------- associated function in this implementation
+10 |     pub fn vote(outputs: &[Array1<f32>], threshold: f32) -> (Array1<f32>, bool) {
+   |            ^^^^
+
+warning: `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator") generated 8 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.25s
+     Running `target/debug/neuro_symbolic_emulator`
+=== Neural TTA Emulator Starting ===
+Loading initial values...
+Executing Program...
+  MOVE R0 -> ADD_IN1
+  STATUS: Moved
+  MOVE R1 -> ADD_IN2
+  STATUS: Moved
+  MOVE R1 -> ADD_TRIGGER
+  STATUS: Unit ADD Executed. Result in ADD_OUT
+  MOVE ADD_OUT -> R2
+  STATUS: Moved
+Final Result in R2: 212 (Expected 15, but might be random garbage if untrained)
+Neural State: [0.4167304, 0.48413795, 0.59032124, 0.1693086, 0.56942827, 0.19410709, 0.642477, 0.65345883, 0.14733264], shape=[9], strides=[1], layout=CFcf (0xf), const ndim=1

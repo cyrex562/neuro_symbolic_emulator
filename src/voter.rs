@@ -1,4 +1,3 @@
-use crate::fu::NeuralFunctionalUnit;
 use ndarray::Array1;
 
 /// A simple consensus voter.

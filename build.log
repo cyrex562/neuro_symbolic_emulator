@@ -1,0 +1,75 @@
+   Compiling neuro_symbolic_emulator v0.1.0 (/home/cyrex/Projects/neuro_symbolic_emulator)
+warning: unused import: `crate::fu::NeuralFunctionalUnit`
+ --> src/voter.rs:1:5
+  |
+1 | use crate::fu::NeuralFunctionalUnit;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0599]: no method named `apply` found for reference `&fu::Activation` in the current scope
+  --> src/fu.rs:24:30
+   |
+24 |                 let s = self.apply(x);
+   |                              ^^^^^ method not found in `&fu::Activation`
+
+error[E0599]: no method named `apply` found for reference `&fu::Activation` in the current scope
+  --> src/fu.rs:28:31
+   |
+28 |                  let t = self.apply(x);
+   |                               ^^^^^ method not found in `&fu::Activation`
+
+error[E0599]: no method named `apply` found for enum `fu::Activation` in the current scope
+  --> src/fu.rs:60:36
+   |
+12 | pub enum Activation {
+   | ------------------- method `apply` not found for this enum
+...
+60 |         let h = self.active_hidden.apply(&h_pre);
+   |                                    ^^^^^ method not found in `fu::Activation`
+
+error[E0599]: no method named `apply` found for enum `fu::Activation` in the current scope
+  --> src/fu.rs:62:36
+   |
+12 | pub enum Activation {
+   | ------------------- method `apply` not found for this enum
+...
+62 |         let y = self.active_output.apply(&y_pre);
+   |                                    ^^^^^ method not found in `fu::Activation`
+
+error[E0282]: type annotations needed
+  --> src/fu.rs:75:13
+   |
+75 |         let delta_1 = self.w2.t().dot(&delta_2) * &d_hidden;
+   |             ^^^^^^^
+...
+87 |         for (i, d) in delta_1.iter().enumerate() {
+   |                       ------- type must be known at this point
+   |
+help: consider giving `delta_1` an explicit type
+   |
+75 |         let delta_1: /* Type */ = self.w2.t().dot(&delta_2) * &d_hidden;
+   |                    ++++++++++++
+
+error[E0599]: no method named `apply` found for enum `fu::Activation` in the current scope
+  --> src/fu.rs:99:36
+   |
+12 | pub enum Activation {
+   | ------------------- method `apply` not found for this enum
+...
+99 |         let h = self.active_hidden.apply(&h_pre);
+   |                                    ^^^^^ method not found in `fu::Activation`
+
+error[E0599]: no method named `apply` found for enum `fu::Activation` in the current scope
+   --> src/fu.rs:101:28
+    |
+ 12 | pub enum Activation {
+    | ------------------- method `apply` not found for this enum
+...
+101 |         self.active_output.apply(&y_pre)
+    |                            ^^^^^ method not found in `fu::Activation`
+
+Some errors have detailed explanations: E0282, E0599.
+For more information about an error, try `rustc --explain E0282`.
+warning: `neuro_symbolic_emulator` (lib) generated 1 warning
+error: could not compile `neuro_symbolic_emulator` (lib) due to 7 previous errors; 1 warning emitted

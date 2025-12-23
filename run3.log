@@ -1,0 +1,175 @@
+   Compiling neuro_symbolic_emulator v0.1.0 (/home/cyrex/Projects/neuro_symbolic_emulator)
+warning: unused import: `BaseFU`
+ --> src/bus.rs:1:17
+  |
+1 | use crate::fu::{BaseFU, NeuralFunctionalUnit};
+  |                 ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `len`
+   --> src/fu.rs:232:13
+    |
+232 |         let len = input.len();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_len`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `neuro_symbolic_emulator` (lib) generated 2 warnings (run `cargo fix --lib -p neuro_symbolic_emulator` to apply 2 suggestions)
+warning: unused imports: `BaseFU`, `LoadStoreFU`, and `StackPointerFU`
+ --> src/main.rs:7:10
+  |
+7 | use fu::{BaseFU, ProgramCounterFU, LoadStoreFU, StackPointerFU, MockComparatorFU, MockBitwiseFU};
+  |          ^^^^^^                    ^^^^^^^^^^^  ^^^^^^^^^^^^^^
+
+warning: unused variable: `program`
+  --> src/main.rs:48:9
+   |
+48 |     let program = vec![
+   |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_program`
+
+warning: method `perturb` is never used
+ --> src/fu.rs:8:8
+  |
+6 | pub trait NeuralFunctionalUnit {
+  |           -------------------- method in this trait
+7 |     fn forward(&mut self, input: &Array1<f32>) -> Array1<f32>;
+8 |     fn perturb(&mut self, amount: f32); // For noise injection verification
+  |        ^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `Activation` is never used
+  --> src/fu.rs:13:10
+   |
+13 | pub enum Activation {
+   |          ^^^^^^^^^^
+
+warning: methods `apply` and `derivative` are never used
+  --> src/fu.rs:21:12
+   |
+20 | impl Activation {
+   | --------------- methods in this implementation
+21 |     pub fn apply(&self, x: &Array1<f32>) -> Array1<f32> {
+   |            ^^^^^
+...
+30 |     pub fn derivative(&self, x: &Array1<f32>) -> Array1<f32> {
+   |            ^^^^^^^^^^
+
+warning: struct `BaseFU` is never constructed
+  --> src/fu.rs:49:12
+   |
+49 | pub struct BaseFU {
+   |            ^^^^^^
+
+warning: associated items `new` and `train_step` are never used
+  --> src/fu.rs:59:12
+   |
+58 | impl BaseFU {
+   | ----------- associated items in this implementation
+59 |     pub fn new(
+   |            ^^^
+...
+67 |     pub fn train_step(&mut self, input: &Array1<f32>, target: &Array1<f32>, lr: f32) {
+   |            ^^^^^^^^^^
+
+warning: associated functions `create_random`, `create_adder`, `create_comparator`, and `create_bitwise` are never used
+   --> src/fu.rs:128:12
+    |
+127 | impl BaseFU {
+    | ----------- associated functions in this implementation
+128 |     pub fn create_random(input_size: usize, hidden_size: usize, output_size: usize) -> Self {
+    |            ^^^^^^^^^^^^^
+...
+140 |     pub fn create_adder() -> Self {
+    |            ^^^^^^^^^^^^
+...
+146 |     pub fn create_comparator() -> Self {
+    |            ^^^^^^^^^^^^^^^^^
+...
+152 |     pub fn create_bitwise() -> Self {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `LoadStoreFU` is never constructed
+   --> src/fu.rs:200:12
+    |
+200 | pub struct LoadStoreFU {
+    |            ^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:206:12
+    |
+205 | impl LoadStoreFU {
+    | ---------------- associated function in this implementation
+206 |     pub fn new(width: usize) -> Self {
+    |            ^^^
+
+warning: struct `StackPointerFU` is never constructed
+   --> src/fu.rs:248:12
+    |
+248 | pub struct StackPointerFU {
+    |            ^^^^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:254:12
+    |
+253 | impl StackPointerFU {
+    | ------------------- associated function in this implementation
+254 |     pub fn new(width: usize) -> Self { 
+    |            ^^^
+
+warning: fields `trigger_map` and `pc_name` are never read
+  --> src/bus.rs:17:9
+   |
+13 | pub struct TransportBus {
+   |            ------------ fields in this struct
+...
+17 |     pub trigger_map: HashMap<String, String>,
+   |         ^^^^^^^^^^^
+18 |     pub pc_name: String, // Name of the PC Unit
+   |         ^^^^^^^
+
+warning: methods `to_symbolic` and `cleanup` are never used
+  --> src/register.rs:32:12
+   |
+ 9 | impl NeuralRegister {
+   | ------------------- methods in this implementation
+...
+32 |     pub fn to_symbolic(&self) -> u32 {
+   |            ^^^^^^^^^^^
+...
+60 |     pub fn cleanup(&mut self) {
+   |            ^^^^^^^
+
+warning: struct `VoterBlock` is never constructed
+ --> src/voter.rs:7:12
+  |
+7 | pub struct VoterBlock;
+  |            ^^^^^^^^^^
+
+warning: associated function `vote` is never used
+  --> src/voter.rs:10:12
+   |
+ 9 | impl VoterBlock {
+   | --------------- associated function in this implementation
+10 |     pub fn vote(outputs: &[Array1<f32>], threshold: f32) -> (Array1<f32>, bool) {
+   |            ^^^^
+
+warning: `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator") generated 18 warnings (2 duplicates) (run `cargo fix --bin "neuro_symbolic_emulator" -p neuro_symbolic_emulator` to apply 2 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.62s
+     Running `target/debug/neuro_symbolic_emulator`
+=== Neural TTA Emulator: Phase 2 Verified ===
+State: R0=20, R1=10. testing GT Guard.
+Executing Program...
+[0] Executing... Guard: None
+  Status: Moved
+[1] Executing... Guard: None
+  Status: Moved
+[2] Executing... Guard: None
+  Status: Unit CMP Executed.
+[3] Executing... Guard: None
+  Status: Moved
+[4] Executing... Guard: Some("R_FLAGS")
+  Status: Moved
+[5] Executing... Guard: Some("R_FLAGS")
+  Status: PC Updated

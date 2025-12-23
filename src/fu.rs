@@ -4,8 +4,9 @@ use serde::{Deserialize, Serialize};
 /// Interface for any Neural Functional Unit.
 /// Takes a vector input and produces a vector output.
 pub trait NeuralFunctionalUnit {
-    fn forward(&self, input: &Array1<f32>) -> Array1<f32>;
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32>;
     fn perturb(&mut self, amount: f32); // For noise injection verification
+    fn tick(&mut self) {} // Optional: Called every cycle
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -17,6 +18,15 @@ pub enum Activation {
 }
 
 impl Activation {
+    pub fn apply(&self, x: &Array1<f32>) -> Array1<f32> {
+        match self {
+            Activation::ReLU => x.mapv(|v| if v > 0.0 { v } else { 0.0 }),
+            Activation::Sigmoid => x.mapv(|v| 1.0 / (1.0 + (-v).exp())),
+            Activation::Tanh => x.mapv(|v| v.tanh()),
+            Activation::Identity => x.clone(),
+        }
+    }
+
     pub fn derivative(&self, x: &Array1<f32>) -> Array1<f32> {
         match self {
             Activation::ReLU => x.mapv(|v| if v > 0.0 { 1.0 } else { 0.0 }),
@@ -72,7 +82,7 @@ impl BaseFU {
         // Backprop to hidden
         // delta_1 = (w2^T * delta_2) * f'(h_pre)
         let d_hidden = self.active_hidden.derivative(&h_pre);
-        let delta_1 = self.w2.t().dot(&delta_2) * &d_hidden;
+        let delta_1: Array1<f32> = self.w2.t().dot(&delta_2) * &d_hidden;
 
         // Update Weights (SGD)
         // w2 -= lr * delta_2 * h^T
@@ -94,7 +104,7 @@ impl BaseFU {
 }
 
 impl NeuralFunctionalUnit for BaseFU {
-    fn forward(&self, input: &Array1<f32>) -> Array1<f32> {
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32> {
         let h_pre = self.w1.dot(input) + &self.b1;
         let h = self.active_hidden.apply(&h_pre);
         let y_pre = self.w2.dot(&h) + &self.b2;
@@ -113,3 +123,149 @@ impl NeuralFunctionalUnit for BaseFU {
         }
     }
 }
+
+impl BaseFU {
+    pub fn create_random(input_size: usize, hidden_size: usize, output_size: usize) -> Self {
+        use rand::Rng;
+        let mut rng = rand::thread_rng();
+        
+        let w1 = Array2::from_shape_fn((hidden_size, input_size), |_| rng.gen_range(-0.5..0.5));
+        let b1 = Array1::from_shape_fn(hidden_size, |_| rng.gen_range(-0.1..0.1));
+        let w2 = Array2::from_shape_fn((output_size, hidden_size), |_| rng.gen_range(-0.5..0.5));
+        let b2 = Array1::from_shape_fn(output_size, |_| rng.gen_range(-0.1..0.1));
+        
+        Self::new(w1, b1, w2, b2, Activation::Sigmoid, Activation::Sigmoid)
+    }
+
+    pub fn create_adder() -> Self {
+        // 8-bit A + 8-bit B = 16 inputs
+        // 8-bit Sum + 1-bit Carry = 9 outputs
+        Self::create_random(16, 32, 9)
+    }
+
+    pub fn create_comparator() -> Self {
+        // 16 inputs (A: 8, B: 8)
+        // 3 outputs: GT, EQ, LT
+        Self::create_random(16, 24, 3)
+    }
+
+    pub fn create_bitwise() -> Self {
+        // Inputs: A (8) + B (8) + Mode (3) = 19 inputs
+        // Output: 8 bits
+        // Mode could be: 000=AND, 001=OR, 010=XOR, 011=NOT A...
+        Self::create_random(19, 32, 8)
+    }
+}
+
+// --- Stateful Units ---
+
+// --- Stateful Units ---
+
+use std::collections::HashMap;
+
+#[derive(Debug, Clone)]
+pub struct ProgramCounterFU {
+    pub pc: u32,
+}
+
+impl ProgramCounterFU {
+    pub fn new() -> Self { Self { pc: 0 } }
+}
+
+impl NeuralFunctionalUnit for ProgramCounterFU {
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32> {
+        // Input acts as JUMP Address.
+        let mut addr = 0;
+        for (i, &v) in input.iter().enumerate() {
+             if v > 0.5 { addr |= 1 << i; }
+        }
+        self.pc = addr; // Jump!
+        
+        // Return new PC as vector
+        let mut out = Array1::zeros(8); // Assume 8-bit address space
+        for i in 0..8 {
+            if (self.pc >> i) & 1 == 1 { out[i] = 1.0; }
+        }
+        out
+    }
+    
+    fn perturb(&mut self, _amount: f32) {}
+    
+    fn tick(&mut self) {
+        self.pc += 1;
+    }
+}
+
+#[derive(Debug, Clone)]
+pub struct LoadStoreFU {
+    pub memory: HashMap<u32, Array1<f32>>,
+    pub width: usize,
+}
+
+impl LoadStoreFU {
+    pub fn new(width: usize) -> Self {
+         Self { memory: HashMap::new(), width }
+    }
+}
+
+impl NeuralFunctionalUnit for LoadStoreFU {
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32> {
+        // Input: ADDR (width). 
+        // We assume DATA_IN is read from a register by the Bus and passed here? 
+        // OR the input vector contains ADDR + DATA?
+        // Prompt: "Trigger: Moving a value to ADDR with a Write-Enable bit set."
+        // This implies the standard TTA trigger is the ADDR register.
+        // But we need the DATA to write.
+        // Convention: We read DATA from a predetermined "DATA_IN" register.
+        // We can't access other registers here.
+        // So we must assume the input *is* the address, and we perform a LOAD?
+        // Or if Write-Enable is set (where? Mode register? Or part of input?), we WRITE.
+        
+        // Simplified Logic for Iteration 3:
+        // Always LOAD from Address.
+        // To WRITE, we might need a separate "STORE_TRIGGER" port/unit or encoding.
+        // Or, we stick to the prompt: "Moving a value to ADDR ... with Write-Enable".
+        // Let's assume input is just ADDR for now, and it returns the Data (LOAD).
+        // WRITE is complex without extra args.
+        
+        let mut addr = 0;
+        let len = input.len();
+        for (i, &v) in input.iter().enumerate() {
+             if v > 0.5 { addr |= 1 << i; }
+        }
+        
+        // MOCK: Return stored value or random
+        if let Some(val) = self.memory.get(&addr) {
+            return val.clone();
+        } else {
+            return Array1::zeros(self.width);
+        }
+    }
+    fn perturb(&mut self, _amount: f32) {}
+}
+
+#[derive(Debug, Clone)]
+pub struct StackPointerFU {
+    pub sp: u32,
+    pub stack: HashMap<u32, Array1<f32>>, // Mock stack memory
+    pub width: usize,
+}
+impl StackPointerFU {
+    pub fn new(width: usize) -> Self { 
+        Self { sp: 0xFF, stack: HashMap::new(), width } 
+    }
+}
+impl NeuralFunctionalUnit for StackPointerFU {
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32> { 
+        // Trigger: STACK_DATA.
+        // If we move data here -> PUSH.
+        // Decrement SP, Store data.
+        self.sp = self.sp.wrapping_sub(1);
+        self.stack.insert(self.sp, input.clone());
+        input.clone() // Pass through or return new SP?
+    }
+    fn perturb(&mut self, _amount: f32) {}
+}
+
+// Mocks removed for production.
+

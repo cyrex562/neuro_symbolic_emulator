@@ -44,6 +44,7 @@ impl NeuralRegister {
         let mut reg = Self::new(width);
         let mut vec = Array1::zeros(width);
         for i in 0..width {
+            // Mapping: 0.0 for 0, 1.0 for 1
             if (val >> i) & 1 == 1 {
                 vec[i] = 1.0;
             } else {
@@ -52,5 +53,11 @@ impl NeuralRegister {
         }
         reg.write(&vec);
         reg
+    }
+
+    /// "Cleans" the noisy neural state back to binary 0.0/1.0
+    /// This simulates the Autoencoder/Hopfield cleanup step.
+    pub fn cleanup(&mut self) {
+        self.state.mapv_inplace(|v| if v > 0.5 { 1.0 } else { 0.0 });
     }
 }
