@@ -46,7 +46,7 @@ fn train_comparator() -> anyhow::Result<()> {
         }
         
         if i % 1000 == 0 {
-             let cur_loss = evaluate(&best_fu, &val_set);
+             let cur_loss = evaluate(&mut best_fu, &val_set);
              println!("Iter {}: Val Loss = {:.4}", i, cur_loss);
         }
     }

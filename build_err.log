@@ -1,0 +1,78 @@
+warning: unused import: `BaseFU`
+ --> src/bus.rs:1:17
+  |
+1 | use crate::fu::{BaseFU, NeuralFunctionalUnit};
+  |                 ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `len`
+   --> src/fu.rs:232:13
+    |
+232 |         let len = input.len();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_len`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `dev`
+  --> src/bus.rs:85:26
+   |
+85 | ...     if let Some(dev) = self.mmio.get_mut(&ad...
+   |                     ^^^ help: if this is intentional, prefix it with an underscore: `_dev`
+
+warning: `neuro_symbolic_emulator` (lib) generated 3 warnings (run `cargo fix --lib -p neuro_symbolic_emulator` to apply 3 suggestions)
+   Compiling neuro_symbolic_emulator v0.1.0 (/home/cyrex/Projects/neuro_symbolic_emulator)
+error[E0432]: unresolved import `crate::fu::UartFU`
+ --> src/system.rs:2:43
+  |
+2 | use crate::fu::{BaseFU, ProgramCounterFU, UartFU, NeuralFunctionalUnit};
+  |                                           ^^^^^^ no `UartFU` in `fu`
+
+warning: unused imports: `BaseFU`, `NeuralFunctionalUnit`, and `ProgramCounterFU`
+ --> src/system.rs:2:17
+  |
+2 | use crate::fu::{BaseFU, ProgramCounterFU, UartFU, NeuralFunctionalUnit};
+  |                 ^^^^^^  ^^^^^^^^^^^^^^^^          ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ndarray::Array1`
+ --> src/system.rs:3:5
+  |
+3 | use ndarray::Array1;
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `SystemBus`
+ --> src/main.rs:7:19
+  |
+7 | use bus::{MoveOp, SystemBus}; // Ensure bus.rs exports SystemBus
+  |                   ^^^^^^^^^
+
+error[E0609]: no field `program_rom` on type `&mut system::System`
+  --> src/system.rs:50:14
+   |
+50 |         self.program_rom = program;
+   |              ^^^^^^^^^^^ unknown field
+   |
+   = note: available fields are: `bus`, `pc_addr`
+
+warning: unused variable: `dev`
+  --> src/bus.rs:85:26
+   |
+85 |              if let Some(dev) = self.mmio.get_mut(&addr) {
+   |                          ^^^ help: if this is intentional, prefix it with an underscore: `_dev`
+
+warning: unused variable: `val`
+  --> src/main.rs:21:27
+   |
+21 |     let load_and_print = |val: u8| -> Vec<MoveOp> {
+   |                           ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `load_and_print`
+  --> src/main.rs:21:9
+   |
+21 |     let load_and_print = |val: u8| -> Vec<MoveOp> {
+   |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_load_and_print`
+
+Some errors have detailed explanations: E0432, E0609.
+For more information about an error, try `rustc --explain E0432`.
+warning: `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator") generated 8 warnings (2 duplicates)
+error: could not compile `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator") due to 2 previous errors; 8 warnings emitted

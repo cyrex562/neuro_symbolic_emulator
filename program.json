@@ -1,0 +1,32 @@
+[
+    {
+        "src": 8192,
+        "dest": 32768,
+        "guard": null
+    },
+    {
+        "src": 8193,
+        "dest": 32768,
+        "guard": null
+    },
+    {
+        "src": 8194,
+        "dest": 32768,
+        "guard": null
+    },
+    {
+        "src": 8195,
+        "dest": 32768,
+        "guard": null
+    },
+    {
+        "src": 8196,
+        "dest": 32768,
+        "guard": null
+    },
+    {
+        "src": 8197,
+        "dest": 32768,
+        "guard": null
+    }
+]

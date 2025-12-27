@@ -61,3 +61,39 @@ impl NeuralRegister {
         self.state.mapv_inplace(|v| if v > 0.5 { 1.0 } else { 0.0 });
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use proptest::prelude::*;
+
+    proptest! {
+        #[test]
+        fn test_symbolic_roundtrip(val in 0u32..256u32) {
+            let width = 8;
+            let reg = NeuralRegister::from_symbolic(width, val);
+            let out = reg.to_symbolic();
+            assert_eq!(val, out);
+        }
+        
+        #[test]
+        fn test_cleanup_property(fuzz in proptest::collection::vec(0.0f32..1.0f32, 8)) {
+            let mut reg = NeuralRegister::new(8);
+            reg.write(&Array1::from(fuzz.clone()));
+            
+            reg.cleanup();
+            
+            for (i, &v) in reg.state.iter().enumerate() {
+                assert!(v == 0.0 || v == 1.0);
+                
+                // Assert it snapped to correct side
+                let original = fuzz[i];
+                if original > 0.5 {
+                    assert_eq!(v, 1.0);
+                } else {
+                    assert_eq!(v, 0.0);
+                }
+            }
+        }
+    }
+}

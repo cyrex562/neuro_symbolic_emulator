@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 
 /// Interface for any Neural Functional Unit.
 /// Takes a vector input and produces a vector output.
-pub trait NeuralFunctionalUnit {
+pub trait NeuralFunctionalUnit: Send + Sync {
     fn forward(&mut self, input: &Array1<f32>) -> Array1<f32>;
     fn perturb(&mut self, amount: f32); // For noise injection verification
     fn tick(&mut self) {} // Optional: Called every cycle
@@ -269,3 +269,85 @@ impl NeuralFunctionalUnit for StackPointerFU {
 
 // Mocks removed for production.
 
+#[derive(Debug, Clone)]
+pub struct UartFU {
+    pub output_buffer: Option<std::sync::Arc<std::sync::Mutex<String>>>,
+}
+
+impl UartFU { 
+    pub fn new() -> Self { Self { output_buffer: None } }
+    
+    pub fn with_sink(sink: std::sync::Arc<std::sync::Mutex<String>>) -> Self {
+        Self { output_buffer: Some(sink) }
+    }
+}
+
+impl NeuralFunctionalUnit for UartFU {
+    fn forward(&mut self, input: &Array1<f32>) -> Array1<f32> {
+        // Interpret input as ASCII char
+        let mut char_code: u8 = 0;
+        for i in 0..8 {
+            if input.get(i).unwrap_or(&0.0) > &0.5 { char_code |= 1 << i; }
+        }
+        let c = char_code as char;
+        
+        // Print to stdout
+        print!("{}", c);
+        use std::io::Write;
+        std::io::stdout().flush().unwrap();
+        
+        // Also capture to buffer if present
+        if let Some(buf_mutex) = &self.output_buffer {
+            if let Ok(mut buf) = buf_mutex.lock() {
+                buf.push(c);
+            }
+        }
+        
+        input.clone() // Echo?
+    }
+    fn perturb(&mut self, _amount: f32) {}
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use proptest::prelude::*;
+
+    #[test]
+    fn test_activation_relu() {
+        let act = Activation::ReLU;
+        let input = Array1::from(vec![-1.0, 0.0, 1.0, 2.0]);
+        let output = act.apply(&input);
+        assert_eq!(output, Array1::from(vec![0.0, 0.0, 1.0, 2.0]));
+    }
+    
+    #[test]
+    fn test_activation_sigmoid() {
+        let act = Activation::Sigmoid;
+        let input = Array1::from(vec![0.0]);
+        let output = act.apply(&input);
+        assert!((output[0] - 0.5).abs() < 1e-5);
+    }
+    
+    proptest! {
+        #[test]
+        fn test_fu_output_shape(
+            in_size in 1usize..20, 
+            hidden_size in 1usize..20, 
+            out_size in 1usize..20
+        ) {
+             let mut fu = BaseFU::create_random(in_size, hidden_size, out_size);
+             let input = Array1::zeros(in_size);
+             let output = fu.forward(&input);
+             assert_eq!(output.len(), out_size);
+        }
+        
+        #[test]
+        fn test_sigmoid_bounds(val in -10.0f32..10.0f32) {
+             let act = Activation::Sigmoid;
+             let input = Array1::from(vec![val]);
+             let out = act.apply(&input);
+             assert!(out[0] >= 0.0 && out[0] <= 1.0);
+        }
+    }
+}

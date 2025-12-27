@@ -1,0 +1,802 @@
+    Updating crates.io index
+     Locking 301 packages to latest compatible versions
+      Adding accesskit v0.12.3
+      Adding accesskit_consumer v0.16.1
+      Adding accesskit_macos v0.10.1
+      Adding accesskit_unix v0.6.2
+      Adding accesskit_windows v0.15.1
+      Adding accesskit_winit v0.15.0
+      Adding adler2 v2.0.1
+      Adding aho-corasick v1.1.4
+      Adding android-activity v0.4.3
+      Adding android-properties v0.2.2
+      Adding arboard v3.6.1
+      Adding arrayref v0.3.9
+      Adding arrayvec v0.7.6
+      Adding async-broadcast v0.5.1
+      Adding async-channel v2.5.0
+      Adding async-executor v1.13.3
+      Adding async-fs v1.6.0
+      Adding async-io v1.13.0
+      Adding async-io v2.6.0
+      Adding async-lock v2.8.0
+      Adding async-lock v3.4.2
+      Adding async-once-cell v0.5.4
+      Adding async-process v1.8.1
+      Adding async-recursion v1.1.1
+      Adding async-signal v0.2.13
+      Adding async-task v4.7.1
+      Adding async-trait v0.1.89
+      Adding atomic-waker v1.1.2
+      Adding atspi v0.19.0
+      Adding atspi-common v0.3.0
+      Adding atspi-connection v0.3.0
+      Adding atspi-proxies v0.3.0
+      Adding bitflags v1.3.2
+      Adding block v0.1.6
+      Adding block-buffer v0.10.4
+      Adding block-sys v0.1.0-beta.1 (available: v0.1.0-beta.2)
+      Adding block2 v0.2.0-alpha.6 (available: v0.2.0)
+      Adding blocking v1.6.2
+      Adding bumpalo v3.19.1
+      Adding bytemuck v1.24.0
+      Adding bytemuck_derive v1.10.2
+      Adding byteorder v1.5.0
+      Adding bytes v1.11.0
+      Adding calloop v0.10.6
+      Adding cc v1.2.50
+      Adding cesu8 v1.1.0
+      Adding cfg_aliases v0.1.1
+      Adding cgl v0.3.2
+      Adding clipboard-win v5.4.1
+      Adding cocoa v0.24.1
+      Adding cocoa-foundation v0.1.2
+      Adding color_quant v1.1.0
+      Adding combine v4.6.7
+      Adding concurrent-queue v2.5.0
+      Adding core-foundation v0.9.4
+      Adding core-foundation-sys v0.8.7
+      Adding core-graphics v0.22.3
+      Adding core-graphics-types v0.1.3
+      Adding cpufeatures v0.2.17
+      Adding crc32fast v1.5.0
+      Adding crossbeam-utils v0.8.21
+      Adding crypto-common v0.1.7
+      Adding derivative v2.2.0
+      Adding digest v0.10.7
+      Adding dispatch v0.2.0
+      Adding dispatch2 v0.3.0
+      Adding displaydoc v0.2.5
+      Adding dlib v0.5.2
+      Adding downcast-rs v1.2.1
+      Adding eframe v0.24.1 (available: v0.33.3)
+      Adding egui-winit v0.24.1
+      Adding egui_glow v0.24.1
+      Adding enumflags2 v0.7.12
+      Adding enumflags2_derive v0.7.12
+      Adding equivalent v1.0.2
+      Adding error-code v3.3.2
+      Adding event-listener v2.5.3
+      Adding event-listener v3.1.0
+      Adding event-listener v5.4.1
+      Adding event-listener-strategy v0.5.4
+      Adding fastrand v1.9.0
+      Adding fdeflate v0.3.7
+      Adding find-msvc-tools v0.1.5
+      Adding flate2 v1.1.5
+      Adding foreign-types v0.3.2
+      Adding foreign-types-shared v0.1.1
+      Adding form_urlencoded v1.2.2
+      Adding futures-core v0.3.31
+      Adding futures-io v0.3.31
+      Adding futures-lite v1.13.0
+      Adding futures-lite v2.6.1
+      Adding futures-sink v0.3.31
+      Adding futures-task v0.3.31
+      Adding futures-util v0.3.31
+      Adding generic-array v0.14.7 (available: v0.14.9)
+      Adding gethostname v1.1.0
+      Adding gl_generator v0.14.0
+      Adding glow v0.12.3
+      Adding glutin v0.30.10
+      Adding glutin-winit v0.3.0
+      Adding glutin_egl_sys v0.5.1
+      Adding glutin_glx_sys v0.4.0
+      Adding glutin_wgl_sys v0.4.0
+      Adding hashbrown v0.16.1
+      Adding hermit-abi v0.3.9
+      Adding hermit-abi v0.5.2
+      Adding hex v0.4.3
+      Adding home v0.5.12
+      Adding icu_collections v2.1.1
+      Adding icu_locale_core v2.1.1
+      Adding icu_normalizer v2.1.1
+      Adding icu_normalizer_data v2.1.1
+      Adding icu_properties v2.1.2
+      Adding icu_properties_data v2.1.2
+      Adding icu_provider v2.1.1
+      Adding idna v1.1.0
+      Adding idna_adapter v1.2.1
+      Adding image v0.24.9
+      Adding indexmap v2.12.1
+      Adding instant v0.1.13
+      Adding io-lifetimes v1.0.11
+      Adding jni v0.21.1
+      Adding jni-sys v0.3.0
+      Adding jobserver v0.1.34
+      Adding js-sys v0.3.83
+      Adding khronos_api v3.1.0
+      Adding lazy_static v1.5.0
+      Adding libloading v0.7.4
+      Adding libloading v0.8.9
+      Adding libredox v0.1.11
+      Adding linux-raw-sys v0.3.8
+      Adding linux-raw-sys v0.4.15
+      Adding litemap v0.8.1
+      Adding log v0.4.29
+      Adding malloc_buf v0.0.6
+      Adding memmap2 v0.5.10
+      Adding memoffset v0.6.5
+      Adding memoffset v0.7.1
+      Adding memoffset v0.9.1
+      Adding miniz_oxide v0.8.9
+      Adding mio v0.8.11
+      Adding ndk v0.7.0
+      Adding ndk-context v0.1.1
+      Adding ndk-sys v0.4.1+23.1.7779620
+      Adding nix v0.24.3
+      Adding nix v0.25.1
+      Adding nix v0.26.4
+      Adding num_enum v0.5.11
+      Adding num_enum v0.6.1
+      Adding num_enum_derive v0.5.11
+      Adding num_enum_derive v0.6.1
+      Adding objc v0.2.7
+      Adding objc-sys v0.2.0-beta.2 (available: v0.2.0-beta.3)
+      Adding objc2 v0.3.0-beta.3.patch-leaks.3 (available: v0.3.0-beta.5)
+      Adding objc2 v0.6.3
+      Adding objc2-app-kit v0.3.2
+      Adding objc2-core-foundation v0.3.2
+      Adding objc2-core-graphics v0.3.2
+      Adding objc2-encode v2.0.0-pre.2 (available: v2.0.0)
+      Adding objc2-encode v4.1.0
+      Adding objc2-foundation v0.3.2
+      Adding objc2-io-surface v0.3.2
+      Adding orbclient v0.3.49
+      Adding ordered-stream v0.2.0
+      Adding parking v2.2.1
+      Adding paste v1.0.15
+      Adding percent-encoding v2.3.2
+      Adding pin-project-lite v0.2.16
+      Adding pin-utils v0.1.0
+      Adding piper v0.2.4
+      Adding pkg-config v0.3.32
+      Adding png v0.17.16
+      Adding polling v2.8.0
+      Adding polling v3.11.0
+      Adding potential_utf v0.1.4
+      Adding proc-macro-crate v1.3.1
+      Adding raw-window-handle v0.5.2
+      Adding redox_syscall v0.3.5
+      Adding redox_syscall v0.6.0
+      Adding regex v1.12.2
+      Adding regex-automata v0.4.13
+      Adding rustix v0.37.28
+      Adding rustix v0.38.44
+      Adding rustversion v1.0.22
+      Adding same-file v1.0.6
+      Adding scoped-tls v1.0.1
+      Adding sctk-adwaita v0.5.4
+      Adding serde_repr v0.1.20
+      Adding sha1 v0.10.6
+      Adding shlex v1.3.0
+      Adding signal-hook-registry v1.4.7
+      Adding simd-adler32 v0.3.8
+      Adding slab v0.4.11
+      Adding slotmap v1.1.1
+      Adding smithay-client-toolkit v0.16.1
+      Adding smithay-clipboard v0.6.6
+      Adding socket2 v0.4.10
+      Adding stable_deref_trait v1.2.1
+      Adding static_assertions v1.1.0
+      Adding strict-num v0.1.1
+      Adding syn v1.0.109
+      Adding synstructure v0.13.2
+      Adding thiserror v1.0.69
+      Adding thiserror-impl v1.0.69
+      Adding tiny-skia v0.8.4
+      Adding tiny-skia-path v0.8.4
+      Adding tinystr v0.8.2
+      Adding toml_datetime v0.6.11
+      Adding toml_edit v0.19.15
+      Adding tracing v0.1.44
+      Adding tracing-attributes v0.1.31
+      Adding tracing-core v0.1.36
+      Adding typenum v1.19.0
+      Adding uds_windows v1.1.0
+      Adding url v2.5.7
+      Adding utf8_iter v1.0.4
+      Adding vec_map v0.8.2
+      Adding waker-fn v1.2.0
+      Adding walkdir v2.5.0
+      Adding wasm-bindgen v0.2.106
+      Adding wasm-bindgen-futures v0.4.56
+      Adding wasm-bindgen-macro v0.2.106
+      Adding wasm-bindgen-macro-support v0.2.106
+      Adding wasm-bindgen-shared v0.2.106
+      Adding wayland-client v0.29.5
+      Adding wayland-commons v0.29.5
+      Adding wayland-cursor v0.29.5
+      Adding wayland-protocols v0.29.5
+      Adding wayland-scanner v0.29.5
+      Adding wayland-sys v0.29.5
+      Adding wayland-sys v0.30.1
+      Adding web-sys v0.3.83
+      Adding web-time v0.2.4
+      Adding webbrowser v0.8.15
+      Adding winapi v0.3.9
+      Adding winapi-i686-pc-windows-gnu v0.4.0
+      Adding winapi-util v0.1.11
+      Adding winapi-x86_64-pc-windows-gnu v0.4.0
+      Adding windows v0.48.0
+      Adding windows-implement v0.48.0
+      Adding windows-interface v0.48.0
+      Adding windows-sys v0.45.0
+      Adding windows-sys v0.48.0
+      Adding windows-sys v0.59.0
+      Adding windows-sys v0.60.2
+      Adding windows-targets v0.42.2
+      Adding windows-targets v0.48.5
+      Adding windows-targets v0.52.6
+      Adding windows-targets v0.53.5
+      Adding windows_aarch64_gnullvm v0.42.2
+      Adding windows_aarch64_gnullvm v0.48.5
+      Adding windows_aarch64_gnullvm v0.52.6
+      Adding windows_aarch64_gnullvm v0.53.1
+      Adding windows_aarch64_msvc v0.42.2
+      Adding windows_aarch64_msvc v0.48.5
+      Adding windows_aarch64_msvc v0.52.6
+      Adding windows_aarch64_msvc v0.53.1
+      Adding windows_i686_gnu v0.42.2
+      Adding windows_i686_gnu v0.48.5
+      Adding windows_i686_gnu v0.52.6
+      Adding windows_i686_gnu v0.53.1
+      Adding windows_i686_gnullvm v0.52.6
+      Adding windows_i686_gnullvm v0.53.1
+      Adding windows_i686_msvc v0.42.2
+      Adding windows_i686_msvc v0.48.5
+      Adding windows_i686_msvc v0.52.6
+      Adding windows_i686_msvc v0.53.1
+      Adding windows_x86_64_gnu v0.42.2
+      Adding windows_x86_64_gnu v0.48.5
+      Adding windows_x86_64_gnu v0.52.6
+      Adding windows_x86_64_gnu v0.53.1
+      Adding windows_x86_64_gnullvm v0.42.2
+      Adding windows_x86_64_gnullvm v0.48.5
+      Adding windows_x86_64_gnullvm v0.52.6
+      Adding windows_x86_64_gnullvm v0.53.1
+      Adding windows_x86_64_msvc v0.42.2
+      Adding windows_x86_64_msvc v0.48.5
+      Adding windows_x86_64_msvc v0.52.6
+      Adding windows_x86_64_msvc v0.53.1
+      Adding winit v0.28.7
+      Adding winnow v0.5.40
+      Adding writeable v0.6.2
+      Adding x11-dl v2.21.0
+      Adding x11rb v0.13.2
+      Adding x11rb-protocol v0.13.2
+      Adding xcursor v0.3.10
+      Adding xdg-home v1.3.0
+      Adding xml-rs v0.8.28
+      Adding yoke v0.8.1
+      Adding yoke-derive v0.8.1
+      Adding zbus v3.15.2
+      Adding zbus_macros v3.15.2
+      Adding zbus_names v2.6.1
+      Adding zerofrom v0.1.6
+      Adding zerofrom-derive v0.1.6
+      Adding zerotrie v0.2.3
+      Adding zerovec v0.11.5
+      Adding zerovec-derive v0.11.2
+      Adding zvariant v3.15.2
+      Adding zvariant_derive v3.15.2
+      Adding zvariant_utils v1.0.1 (available: v1.1.1)
+   Compiling once_cell v1.21.3
+   Compiling bitflags v1.3.2
+   Compiling log v0.4.29
+   Compiling smallvec v1.15.1
+   Compiling pin-project-lite v0.2.16
+   Compiling futures-core v0.3.31
+   Compiling parking v2.2.1
+   Compiling libloading v0.8.9
+   Compiling stable_deref_trait v1.2.1
+   Compiling libc v0.2.178
+   Compiling crossbeam-utils v0.8.21
+   Compiling futures-io v0.3.31
+   Compiling lazy_static v1.5.0
+   Compiling memoffset v0.6.5
+   Compiling typenum v1.19.0
+   Compiling memchr v2.7.6
+   Compiling serde v1.0.228
+   Compiling bytemuck v1.24.0
+   Compiling zerofrom v0.1.6
+   Compiling event-listener v2.5.3
+   Compiling byteorder v1.5.0
+   Compiling waker-fn v1.2.0
+   Compiling atomic-waker v1.1.2
+   Compiling fastrand v1.9.0
+   Compiling slab v0.4.11
+   Compiling futures-lite v2.6.1
+   Compiling async-task v4.7.1
+   Compiling dlib v0.5.2
+   Compiling yoke v0.8.1
+   Compiling proc-macro-crate v1.3.1
+   Compiling simd-adler32 v0.3.8
+   Compiling async-lock v2.8.0
+   Compiling piper v0.2.4
+   Compiling memoffset v0.7.1
+   Compiling regex-automata v0.4.13
+   Compiling static_assertions v1.1.0
+   Compiling wayland-sys v0.29.5
+   Compiling downcast-rs v1.2.1
+   Compiling adler2 v2.0.1
+   Compiling linux-raw-sys v0.3.8
+   Compiling scoped-tls v1.0.1
+   Compiling crc32fast v1.5.0
+   Compiling tracing-core v0.1.36
+   Compiling concurrent-queue v2.5.0
+   Compiling zerovec v0.11.5
+   Compiling miniz_oxide v0.8.9
+   Compiling futures-task v0.3.31
+   Compiling futures-sink v0.3.31
+   Compiling writeable v0.6.2
+   Compiling cpufeatures v0.2.17
+   Compiling rustix v1.1.3
+   Compiling pin-utils v0.1.0
+   Compiling litemap v0.8.1
+   Compiling thiserror v1.0.69
+   Compiling zerotrie v0.2.3
+   Compiling event-listener v5.4.1
+   Compiling slotmap v1.1.1
+   Compiling fdeflate v0.3.7
+   Compiling async-broadcast v0.5.1
+   Compiling ordered-stream v0.2.0
+   Compiling hex v0.4.3
+   Compiling async-executor v1.13.3
+   Compiling futures-lite v1.13.0
+   Compiling futures-util v0.3.31
+   Compiling generic-array v0.14.7
+   Compiling zvariant_derive v3.15.2
+   Compiling event-listener-strategy v0.5.4
+   Compiling enumflags2 v0.7.12
+   Compiling tinystr v0.8.2
+   Compiling flate2 v1.1.5
+   Compiling potential_utf v0.1.4
+   Compiling tracing v0.1.44
+   Compiling async-channel v2.5.0
+   Compiling percent-encoding v2.3.2
+   Compiling linux-raw-sys v0.11.0
+   Compiling xcursor v0.3.10
+   Compiling vec_map v0.8.2
+   Compiling icu_locale_core v2.1.1
+   Compiling icu_collections v2.1.1
+   Compiling blocking v1.6.2
+   Compiling arrayref v0.3.9
+   Compiling strict-num v0.1.1
+   Compiling icu_properties_data v2.1.2
+   Compiling icu_normalizer_data v2.1.1
+   Compiling accesskit v0.12.3
+   Compiling arrayvec v0.7.6
+   Compiling num-traits v0.2.19
+   Compiling tiny-skia-path v0.8.4
+   Compiling raw-window-handle v0.5.2
+   Compiling ahash v0.8.12
+   Compiling ecolor v0.24.1
+   Compiling emath v0.24.1
+   Compiling instant v0.1.13
+   Compiling png v0.17.16
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling async-fs v1.6.0
+   Compiling utf8_iter v1.0.4
+   Compiling form_urlencoded v1.2.2
+   Compiling accesskit_consumer v0.16.1
+   Compiling x11rb-protocol v0.13.2
+   Compiling async-once-cell v0.5.4
+   Compiling glutin_egl_sys v0.5.1
+   Compiling digest v0.10.7
+   Compiling wayland-sys v0.30.1
+   Compiling libloading v0.7.4
+   Compiling home v0.5.12
+   Compiling glow v0.12.3
+   Compiling sha1 v0.10.6
+   Compiling web-time v0.2.4
+   Compiling color_quant v1.1.0
+   Compiling serde_json v1.0.146
+   Compiling getrandom v0.2.16
+   Compiling nix v0.24.3
+   Compiling io-lifetimes v1.0.11
+   Compiling socket2 v0.4.10
+   Compiling polling v2.8.0
+   Compiling nix v0.26.4
+   Compiling rand_core v0.6.4
+   Compiling rustix v0.37.28
+   Compiling xdg-home v1.3.0
+   Compiling nix v0.25.1
+   Compiling icu_provider v2.1.1
+   Compiling memmap2 v0.5.10
+   Compiling zvariant v3.15.2
+   Compiling rand_chacha v0.3.1
+   Compiling x11-dl v2.21.0
+   Compiling parking_lot_core v0.9.12
+   Compiling tiny-skia v0.8.4
+   Compiling getrandom v0.3.4
+   Compiling regex v1.12.2
+   Compiling rand v0.8.5
+   Compiling icu_normalizer v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling parking_lot v0.12.5
+   Compiling mio v0.8.11
+   Compiling rand_core v0.9.3
+   Compiling epaint v0.24.1
+   Compiling image v0.24.9
+   Compiling num-integer v0.1.46
+   Compiling wayland-commons v0.29.5
+   Compiling num-complex v0.4.6
+   Compiling wait-timeout v0.2.1
+   Compiling rand_chacha v0.9.0
+   Compiling rand_xorshift v0.4.0
+   Compiling wayland-client v0.29.5
+   Compiling zbus_names v2.6.1
+   Compiling calloop v0.10.6
+   Compiling async-io v1.13.0
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling egui v0.24.1
+   Compiling ndarray v0.15.6
+   Compiling rand v0.9.2
+   Compiling clap v4.5.53
+   Compiling url v2.5.7
+   Compiling zbus_macros v3.15.2
+   Compiling wayland-protocols v0.29.5
+   Compiling wayland-cursor v0.29.5
+   Compiling webbrowser v0.8.15
+   Compiling glutin_glx_sys v0.4.0
+   Compiling glutin v0.30.10
+   Compiling gethostname v1.1.0
+   Compiling tempfile v3.23.0
+   Compiling x11rb v0.13.2
+   Compiling rusty-fork v0.3.1
+   Compiling proptest v1.9.0
+   Compiling arboard v3.6.1
+   Compiling zbus v3.15.2
+   Compiling egui_glow v0.24.1
+   Compiling smithay-client-toolkit v0.16.1
+   Compiling sctk-adwaita v0.5.4
+   Compiling smithay-clipboard v0.6.6
+   Compiling winit v0.28.7
+   Compiling glutin-winit v0.3.0
+   Compiling atspi-common v0.3.0
+   Compiling atspi-proxies v0.3.0
+   Compiling atspi-connection v0.3.0
+   Compiling atspi v0.19.0
+   Compiling accesskit_unix v0.6.2
+   Compiling accesskit_winit v0.15.0
+   Compiling egui-winit v0.24.1
+   Compiling eframe v0.24.1
+   Compiling neuro_symbolic_emulator v0.1.0 (/home/cyrex/Projects/neuro_symbolic_emulator)
+warning: unused import: `BaseFU`
+ --> src/bus.rs:1:17
+  |
+1 | use crate::fu::{BaseFU, NeuralFunctionalUnit};
+  |                 ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `len`
+   --> src/fu.rs:232:13
+    |
+232 |         let len = input.len();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_len`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `dev`
+  --> src/bus.rs:85:26
+   |
+85 |              if let Some(dev) = self.mmio.get_mut(&addr) {
+   |                          ^^^ help: if this is intentional, prefix it with an underscore: `_dev`
+
+warning: `neuro_symbolic_emulator` (lib) generated 3 warnings (run `cargo fix --lib -p neuro_symbolic_emulator` to apply 3 suggestions)
+warning: unused import: `ProgramCounterFU`
+ --> src/bin/manage_fus.rs:5:65
+  |
+5 | use neuro_symbolic_emulator::fu::{BaseFU, NeuralFunctionalUnit, ProgramCounterFU};
+  |                                                                 ^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Array2`
+ --> src/bin/manage_fus.rs:6:23
+  |
+6 | use ndarray::{Array1, Array2};
+  |                       ^^^^^^
+
+warning: unused imports: `BaseFU`, `NeuralFunctionalUnit`, and `ProgramCounterFU`
+ --> src/system.rs:2:17
+  |
+2 | use crate::fu::{BaseFU, ProgramCounterFU, UartFU, NeuralFunctionalUnit};
+  |                 ^^^^^^  ^^^^^^^^^^^^^^^^          ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ndarray::Array1`
+ --> src/system.rs:3:5
+  |
+3 | use ndarray::Array1;
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `std::thread`
+ --> src/gui.rs:6:5
+  |
+6 | use std::thread;
+  |     ^^^^^^^^^^^
+
+warning: unused import: `std::time::Duration`
+ --> src/gui.rs:7:5
+  |
+7 | use std::time::Duration;
+  |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src/loader.rs:2:5
+  |
+2 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Context`
+ --> src/loader.rs:4:22
+  |
+4 | use anyhow::{Result, Context};
+  |                      ^^^^^^^
+
+warning: unused import: `ndarray::Array1`
+ --> src/loader.rs:5:5
+  |
+5 | use ndarray::Array1;
+  |     ^^^^^^^^^^^^^^^
+
+warning: variable does not need to be mutable
+   --> src/bin/manage_fus.rs:244:9
+    |
+244 |     let mut rng = rand::thread_rng();
+    |         ----^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `rng`
+   --> src/bin/manage_fus.rs:244:9
+    |
+244 |     let mut rng = rand::thread_rng();
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `cc`
+  --> src/gui.rs:20:16
+   |
+20 |     pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
+   |                ^^ help: if this is intentional, prefix it with an underscore: `_cc`
+
+warning: variable does not need to be mutable
+  --> src/loader.rs:47:22
+   |
+47 |                  let mut fu = BaseFU::create_comparator();
+   |                      ----^^
+   |                      |
+   |                      help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> src/loader.rs:59:22
+   |
+59 |                  let mut fu = BaseFU::create_bitwise();
+   |                      ----^^
+   |                      |
+   |                      help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/loader.rs:117:13
+    |
+117 |         let mut sys = load_manifest(&temp_file).expect("Failed to load manifest");
+    |             ----^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: method `perturb` is never used
+ --> src/fu.rs:8:8
+  |
+6 | pub trait NeuralFunctionalUnit: Send + Sync {
+  |           -------------------- method in this trait
+7 |     fn forward(&mut self, input: &Array1<f32>) -> Array1<f32>;
+8 |     fn perturb(&mut self, amount: f32); // For noise injection verification
+  |        ^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `derivative` is never used
+  --> src/fu.rs:30:12
+   |
+20 | impl Activation {
+   | --------------- method in this implementation
+...
+30 |     pub fn derivative(&self, x: &Array1<f32>) -> Array1<f32> {
+   |            ^^^^^^^^^^
+
+warning: method `train_step` is never used
+  --> src/fu.rs:67:12
+   |
+58 | impl BaseFU {
+   | ----------- method in this implementation
+...
+67 |     pub fn train_step(&mut self, input: &Array1<f32>, target: &Array1<f32>, lr: f32) {
+   |            ^^^^^^^^^^
+
+warning: associated function `create_adder` is never used
+   --> src/fu.rs:140:12
+    |
+127 | impl BaseFU {
+    | ----------- associated function in this implementation
+...
+140 |     pub fn create_adder() -> Self {
+    |            ^^^^^^^^^^^^
+
+warning: struct `ProgramCounterFU` is never constructed
+   --> src/fu.rs:167:12
+    |
+167 | pub struct ProgramCounterFU {
+    |            ^^^^^^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:172:12
+    |
+171 | impl ProgramCounterFU {
+    | --------------------- associated function in this implementation
+172 |     pub fn new() -> Self { Self { pc: 0 } }
+    |            ^^^
+
+warning: struct `LoadStoreFU` is never constructed
+   --> src/fu.rs:200:12
+    |
+200 | pub struct LoadStoreFU {
+    |            ^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:206:12
+    |
+205 | impl LoadStoreFU {
+    | ---------------- associated function in this implementation
+206 |     pub fn new(width: usize) -> Self {
+    |            ^^^
+
+warning: struct `StackPointerFU` is never constructed
+   --> src/fu.rs:248:12
+    |
+248 | pub struct StackPointerFU {
+    |            ^^^^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:254:12
+    |
+253 | impl StackPointerFU {
+    | ------------------- associated function in this implementation
+254 |     pub fn new(width: usize) -> Self { 
+    |            ^^^
+
+warning: struct `VoterBlock` is never constructed
+ --> src/voter.rs:7:12
+  |
+7 | pub struct VoterBlock;
+  |            ^^^^^^^^^^
+
+warning: associated function `vote` is never used
+  --> src/voter.rs:10:12
+   |
+ 9 | impl VoterBlock {
+   | --------------- associated function in this implementation
+10 |     pub fn vote(outputs: &[Array1<f32>], threshold: f32) -> (Array1<f32>, bool) {
+   |            ^^^^
+
+warning: methods `load_firmware` and `load_program` are never used
+  --> src/system.rs:36:12
+   |
+15 | impl SystemEmulator {
+   | ------------------- methods in this implementation
+...
+36 |     pub fn load_firmware(&mut self) {
+   |            ^^^^^^^^^^^^^
+...
+40 |     pub fn load_program(&mut self, prog: Vec<MoveOp>) {
+   |            ^^^^^^^^^^^^
+
+warning: field `selected_fu_addr` is never read
+  --> src/gui.rs:16:5
+   |
+ 9 | pub struct NtseApp {
+   |            ------- field in this struct
+...
+16 |     selected_fu_addr: Option<u16>,
+   |     ^^^^^^^^^^^^^^^^
+
+warning: field `ram_size` is never read
+  --> src/loader.rs:14:9
+   |
+13 | pub struct Manifest {
+   |            -------- field in this struct
+14 |     pub ram_size: usize,
+   |         ^^^^^^^^
+   |
+   = note: `Manifest` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: field `name` is never read
+  --> src/loader.rs:21:9
+   |
+20 | pub struct UnitConfig {
+   |            ---------- field in this struct
+21 |     pub name: String,
+   |         ^^^^
+   |
+   = note: `UnitConfig` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: `neuro_symbolic_emulator` (bin "manage_fus" test) generated 4 warnings (run `cargo fix --bin "manage_fus" -p neuro_symbolic_emulator --tests` to apply 4 suggestions)
+warning: `neuro_symbolic_emulator` (lib test) generated 3 warnings (3 duplicates)
+warning: `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator" test) generated 30 warnings (3 duplicates) (run `cargo fix --bin "neuro_symbolic_emulator" -p neuro_symbolic_emulator --tests` to apply 11 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 25.03s
+     Running unittests src/lib.rs (target/debug/deps/neuro_symbolic_emulator-fd38926308cac9cf)
+
+running 8 tests
+test fu::tests::test_activation_sigmoid ... ok
+test fu::tests::test_activation_relu ... ok
+test bus::tests::test_guard_logic ... ok
+test bus::tests::test_bus_memory_map ... ok
+test fu::tests::test_sigmoid_bounds ... ok
+test register::tests::test_cleanup_property ... ok
+test register::tests::test_symbolic_roundtrip ... ok
+test fu::tests::test_fu_output_shape ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/bin/manage_fus.rs (target/debug/deps/manage_fus-add040343341c5b7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/neuro_symbolic_emulator-75e95f1a3702327e)
+
+running 9 tests
+test fu::tests::test_activation_sigmoid ... ok
+test bus::tests::test_guard_logic ... ok
+test bus::tests::test_bus_memory_map ... ok
+test fu::tests::test_activation_relu ... ok
+test loader::tests::test_manifest_parsing ... ok
+test fu::tests::test_sigmoid_bounds ... ok
+test register::tests::test_symbolic_roundtrip ... ok
+test register::tests::test_cleanup_property ... ok
+test fu::tests::test_fu_output_shape ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/bin/train_fu.rs (target/debug/deps/train_fu-eac7a89de5cb3527)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests neuro_symbolic_emulator
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

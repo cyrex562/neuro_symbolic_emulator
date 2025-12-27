@@ -1,0 +1,210 @@
+warning: unused import: `BaseFU`
+ --> src/bus.rs:1:17
+  |
+1 | use crate::fu::{BaseFU, NeuralFunctionalUnit};
+  |                 ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `len`
+   --> src/fu.rs:232:13
+    |
+232 |         let len = input.len();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_len`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `dev`
+  --> src/bus.rs:85:26
+   |
+85 | ...     if let Some(dev) = self.mmio.get_mut(&ad...
+   |                     ^^^ help: if this is intentional, prefix it with an underscore: `_dev`
+
+warning: `neuro_symbolic_emulator` (lib) generated 3 warnings (run `cargo fix --lib -p neuro_symbolic_emulator` to apply 3 suggestions)
+warning: unused imports: `BaseFU`, `NeuralFunctionalUnit`, and `ProgramCounterFU`
+ --> src/system.rs:2:17
+  |
+2 | ...::{BaseFU, ProgramCounterFU, UartFU, NeuralFunctionalUnit};
+  |       ^^^^^^  ^^^^^^^^^^^^^^^^          ^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ndarray::Array1`
+ --> src/system.rs:3:5
+  |
+3 | use ndarray::Array1;
+  |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `SystemBus`
+ --> src/main.rs:7:19
+  |
+7 | use bus::{MoveOp, SystemBus}; // Ensure bus.rs ex...
+  |                   ^^^^^^^^^
+
+warning: unused variable: `val`
+  --> src/main.rs:21:27
+   |
+21 |     let load_and_print = |val: u8| -> Vec<MoveOp> {
+   |                           ^^^ help: if this is intentional, prefix it with an underscore: `_val`
+
+warning: unused variable: `load_and_print`
+  --> src/main.rs:21:9
+   |
+21 |     let load_and_print = |val: u8| -> Vec<MoveOp> {
+   |         ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_load_and_print`
+
+warning: method `perturb` is never used
+ --> src/fu.rs:8:8
+  |
+6 | pub trait NeuralFunctionalUnit {
+  |           -------------------- method in this trait
+7 |     fn forward(&mut self, input: &Array1<f32>) ->...
+8 |     fn perturb(&mut self, amount: f32); // For no...
+  |        ^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `Activation` is never used
+  --> src/fu.rs:13:10
+   |
+13 | pub enum Activation {
+   |          ^^^^^^^^^^
+
+warning: methods `apply` and `derivative` are never used
+  --> src/fu.rs:21:12
+   |
+20 | impl Activation {
+   | --------------- methods in this implementation
+21 |     pub fn apply(&self, x: &Array1<f32>) -> Arra...
+   |            ^^^^^
+...
+30 |     pub fn derivative(&self, x: &Array1<f32>) ->...
+   |            ^^^^^^^^^^
+
+warning: struct `BaseFU` is never constructed
+  --> src/fu.rs:49:12
+   |
+49 | pub struct BaseFU {
+   |            ^^^^^^
+
+warning: associated items `new` and `train_step` are never used
+  --> src/fu.rs:59:12
+   |
+58 | impl BaseFU {
+   | ----------- associated items in this implementation
+59 |     pub fn new(
+   |            ^^^
+...
+67 |     pub fn train_step(&mut self, input: &Array1<...
+   |            ^^^^^^^^^^
+
+warning: associated functions `create_random`, `create_adder`, `create_comparator`, and `create_bitwise` are never used
+   --> src/fu.rs:128:12
+    |
+127 | impl BaseFU {
+    | ----------- associated functions in this implementation
+128 |     pub fn create_random(input_size: usize, hid...
+    |            ^^^^^^^^^^^^^
+...
+140 |     pub fn create_adder() -> Self {
+    |            ^^^^^^^^^^^^
+...
+146 |     pub fn create_comparator() -> Self {
+    |            ^^^^^^^^^^^^^^^^^
+...
+152 |     pub fn create_bitwise() -> Self {
+    |            ^^^^^^^^^^^^^^
+
+warning: struct `ProgramCounterFU` is never constructed
+   --> src/fu.rs:167:12
+    |
+167 | pub struct ProgramCounterFU {
+    |            ^^^^^^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:172:12
+    |
+171 | impl ProgramCounterFU {
+    | --------------------- associated function in this implementation
+172 |     pub fn new() -> Self { Self { pc: 0 } }
+    |            ^^^
+
+warning: struct `LoadStoreFU` is never constructed
+   --> src/fu.rs:200:12
+    |
+200 | pub struct LoadStoreFU {
+    |            ^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:206:12
+    |
+205 | impl LoadStoreFU {
+    | ---------------- associated function in this implementation
+206 |     pub fn new(width: usize) -> Self {
+    |            ^^^
+
+warning: struct `StackPointerFU` is never constructed
+   --> src/fu.rs:248:12
+    |
+248 | pub struct StackPointerFU {
+    |            ^^^^^^^^^^^^^^
+
+warning: associated function `new` is never used
+   --> src/fu.rs:254:12
+    |
+253 | impl StackPointerFU {
+    | ------------------- associated function in this implementation
+254 |     pub fn new(width: usize) -> Self { 
+    |            ^^^
+
+warning: method `add_unit` is never used
+  --> src/bus.rs:34:12
+   |
+20 | impl SystemBus {
+   | -------------- method in this implementation
+...
+34 |     pub fn add_unit(&mut self, base_addr: u16, u...
+   |            ^^^^^^^^
+
+warning: methods `to_symbolic` and `cleanup` are never used
+  --> src/register.rs:32:12
+   |
+ 9 | impl NeuralRegister {
+   | ------------------- methods in this implementation
+...
+32 |     pub fn to_symbolic(&self) -> u32 {
+   |            ^^^^^^^^^^^
+...
+60 |     pub fn cleanup(&mut self) {
+   |            ^^^^^^^
+
+warning: struct `VoterBlock` is never constructed
+ --> src/voter.rs:7:12
+  |
+7 | pub struct VoterBlock;
+  |            ^^^^^^^^^^
+
+warning: associated function `vote` is never used
+  --> src/voter.rs:10:12
+   |
+ 9 | impl VoterBlock {
+   | --------------- associated function in this implementation
+10 |     pub fn vote(outputs: &[Array1<f32>], thresho...
+   |            ^^^^
+
+warning: method `load_firmware` is never used
+  --> src/system.rs:32:12
+   |
+15 | impl SystemEmulator {
+   | ------------------- method in this implementation
+...
+32 |     pub fn load_firmware(&mut self) {
+   |            ^^^^^^^^^^^^^
+
+warning: `neuro_symbolic_emulator` (bin "neuro_symbolic_emulator") generated 25 warnings (3 duplicates) (run `cargo fix --bin "neuro_symbolic_emulator" -p neuro_symbolic_emulator` to apply 5 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target/debug/neuro_symbolic_emulator`
+=== Neural TTA System Emulator (Phase 3) ===
+Running Boot Sequence...
+--- Console Output Start ---
+HELLO
+--- Console Output End ---
+System Halted.
